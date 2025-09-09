@@ -1,0 +1,9 @@
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: darkblue;
+}
+.description {
+  color: gray;
+  margin-top: 10px;
+}
