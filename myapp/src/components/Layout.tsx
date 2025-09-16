@@ -1,12 +1,13 @@
-src/app/page.tsx
-import Layout from "@/components/Layout";
 
-export default function Home() {
+import Header from "./Header";
+import Footer from "./Footer";
+
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <Layout>
-      <h2 className="text-2xl font-bold">Нүүр хуудас</h2>
-      <p className="mt-4">Энэ бол Layout ашигласан жишээ.</p>
-    </Layout>
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-grow container mx-auto p-6">{children}</main>
+      <Footer />
+    </div>
   );
 }
-
