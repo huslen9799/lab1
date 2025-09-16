@@ -1,21 +1,29 @@
-import { notFound } from "next/navigation";
+"use client";
+
+import Link from "next/link";
 import { blogs } from "@/app/data/blogs";
 
-export default function BlogDetail({ params }: { params: { id: string } }) {
-  const blogId = Number(params.id);
-  const blog = blogs.find((b) => b.id === blogId);
-
-  if (!blog) {
-    notFound();
-  }
-
+export default function BlogPage() {
   return (
     <div className="p-6">
-      <h1 className="text-3xl font-bold mb-2">{blog.blogname}</h1>
-      <p className="text-gray-700">{blog.description}</p>
-      <p className="mt-4 text-sm text-gray-500">
-        Blog ID: {blog.id} - dynamically routed page
-      </p>
+      <h1 className="text-2xl font-bold mb-4">Blog List</h1>
+      <ul className="space-y-3">
+        {blogs.map((blog) => (
+          <li
+            key={blog.id}
+            className="border p-4 rounded-lg shadow hover:shadow-lg transition-shadow"
+          >
+            <h2 className="text-xl font-semibold">{blog.blogname}</h2>
+            <p className="text-gray-600">{blog.description}</p>
+            <Link
+              href={`/blog/${blog.id}`}
+              className="text-blue-500 hover:underline mt-2 inline-block"
+            >
+              Read more
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
