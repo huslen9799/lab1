@@ -20,6 +20,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <Link href="/contact" className="hover:underline">
               Холбоо барих
             </Link>
+            <Link href="/gallery" className="hover:underline">
+              Зургийн цомог
+            </Link>
           </nav>
         </div>
       </header>

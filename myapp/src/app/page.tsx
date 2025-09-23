@@ -10,17 +10,6 @@ export default function Home() {
           Манай сайтад тавтай морил! Доорх нь жишээ зураг юм.
         </p>
 
-        {/* Hero Image */}
-        <div className="flex justify-center">
-          <Image
-            src="/images/hero.jpg"
-            alt="Жишээ зураг"
-            width={600}
-            height={400}
-            className="rounded-2xl shadow-lg"
-            priority
-          />
-        </div>
 
         <p className="mt-6 text-gray-600">
           Энэ бол Layout болон Navbar ашигласан жишээ юм.
