@@ -15,7 +15,7 @@ export default function AboutPage() {
         {/* Example Image */}
         <div className="flex justify-center mb-6">
           <Image
-            src="/images/team.jpg" // public/images/team.jpg
+            src="/images/hello.png" // public/images/team.jpg
             alt="Our Team"
             width={500}
             height={300}
