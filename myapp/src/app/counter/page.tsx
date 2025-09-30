@@ -2,6 +2,7 @@
 // Хэрэв "use client" байхгүй бол зөвхөн server component болно.
 "use client";
 
+import Layout from "@/components/Layout";
 // React-аас useState hook-ийг import хийж байна.
 import { useState } from "react";
 
@@ -14,6 +15,7 @@ export default function CounterPage() {
 
   // Component-ийн JSX буцааж байна.
   return (
+    <Layout>
     // flex, flex-col → column чиглэлтэй уян контейнер
     // items-center → доторх элементүүдийг голлуулна
     // gap-4 → элементүүдийн хооронд 1rem (16px) зай авна
@@ -54,5 +56,6 @@ export default function CounterPage() {
         </button>
       </div>
     </div>
+    </Layout>
   );
 }

@@ -1,9 +1,9 @@
-import Layout from "@/components/Layout";
+
 "use client";
 // Next.js 13+ App Router-д client component гэдгийг зааж өгнө.
 
 import { useState, useEffect } from "react";
-
+import Layout from "@/components/Layout";
 interface Todo {
   text: string; // Todo-ийн бичвэр
   done: boolean; // Дууссан эсэх
@@ -164,7 +164,7 @@ export default function TodoPage() {
         ))}
       </ul>
     </div>
-     </Layout>
+    </Layout>
   );
  
 }
