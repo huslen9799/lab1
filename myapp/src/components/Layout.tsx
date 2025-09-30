@@ -23,6 +23,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <Link href="/gallery" className="hover:underline">
               Зургийн цомог
             </Link>
+              <Link href="/counter" className="hover:underline">
+              counter
+            </Link>
+              <Link href="/todo" className="hover:underline">
+             todo
+            </Link>
           </nav>
         </div>
       </header>
