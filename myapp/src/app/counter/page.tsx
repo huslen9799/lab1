@@ -2,10 +2,10 @@
 // Хэрэв "use client" байхгүй бол зөвхөн server component болно.
 "use client";
 
-import Layout from "@/components/Layout";
+
 // React-аас useState hook-ийг import хийж байна.
 import { useState } from "react";
-
+import Layout from "@/components/Layout";
 // Default export хийсэн функц бол бидний хуудасны component.
 export default function CounterPage() {
   // useState(0) → count-ийн анхны утгыг 0 гэж тогтоож байна.
