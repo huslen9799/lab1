@@ -1,13 +1,12 @@
 "use client";
-// Next.js 13+ App Router-д client component гэдгийг зааж өгнө.
 
 import { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
 
 interface Todo {
-  text: string; // Todo-ийн бичвэр
-  done: boolean; // Дууссан эсэх
-  due: string; // Дуусах хугацаа (YYYY-MM-DD format)
+  text: string;
+  done: boolean;
+  due: string;
 }
 
 export default function TodoPage() {
@@ -41,7 +40,10 @@ export default function TodoPage() {
   };
 
   const removeTodo = (index: number) => {
-    setTodos(todos.filter((_, i) => i !== index));
+    const todoText = todos[index].text;
+    if (window.confirm(`Are you sure you want to delete "${todoText}"?`)) {
+      setTodos(todos.filter((_, i) => i !== index));
+    }
   };
 
   const toggleTodo = (index: number) => {
@@ -141,19 +143,17 @@ export default function TodoPage() {
             </li>
           ))}
         </ul>
+
+        {/* Done / Not done counter */}
+        <div className="flex gap-6 text-lg font-medium mt-4">
+          <span className="text-green-600">
+            ✅ Done: {todos.filter((t) => t.done).length}
+          </span>
+          <span className="text-red-600">
+            ❌ Not Done: {todos.filter((t) => !t.done).length}
+          </span>
+        </div>
       </div>
-
-
-{/* Done / Not done counter */}
-<div className="flex gap-6 text-lg font-medium">
-  <span className="text-green-600">
-    ✅ Done: {todos.filter((t) => t.done).length}
-  </span>
-  <span className="text-red-600">
-    ❌ Not Done: {todos.filter((t) => !t.done).length}
-  </span>
-</div>
-
     </Layout>
   );
 }
