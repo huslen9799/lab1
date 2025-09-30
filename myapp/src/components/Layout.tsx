@@ -8,7 +8,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container mx-auto flex justify-between items-center p-4">
           <h1 className="text-2xl font-bold">My Website</h1>
           <nav className="space-x-6">
-            <Link href="/" className="hover:underline">
+            <Link href="/" className="hover:font-18px">
               Нүүр
             </Link>
             <Link href="/about" className="hover:underline">
@@ -26,7 +26,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Link href="/counter" className="hover:underline">
               counter
             </Link>
-              <Link href="/todo" className="hover:underline">
+              <Link href="/todo" className="hover:underline ">
              todo
             </Link>
           </nav>
