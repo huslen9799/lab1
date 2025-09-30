@@ -1,58 +1,55 @@
-// Энэ хуудсыг client component болгохын тулд заавал бичнэ.
-// Хэрэв "use client" байхгүй бол зөвхөн server component болно.
 "use client";
 
-
-// React-аас useState hook-ийг import хийж байна.
-import { useState } from "react";
 import Layout from "@/components/Layout";
-// Default export хийсэн функц бол бидний хуудасны component.
+import { useState } from "react";
+
 export default function CounterPage() {
-  // useState(0) → count-ийн анхны утгыг 0 гэж тогтоож байна.
-  // count → одоогийн утга хадгална.
-  // setCount → state-г шинэчлэх зориулалттай функц.
   const [count, setCount] = useState(0);
 
-  // Component-ийн JSX буцааж байна.
+  const increase = () => setCount(count + 1);
+  const decrease = () => {
+    if (count > 0) setCount(count - 1); // 0-оос доош буурахгүй
+  };
+  const reset = () => setCount(0);
+  const double = () => setCount(count * 2);
+  const half = () => setCount(Math.floor(count / 2));
+
   return (
     <Layout>
-    // flex, flex-col → column чиглэлтэй уян контейнер
-    // items-center → доторх элементүүдийг голлуулна
-    // gap-4 → элементүүдийн хооронд 1rem (16px) зай авна
-    <div className="flex flex-col items-center gap-4">
-      {/* Гарчиг */}
-      <h1 className="text-2xl font-bold">Counter App</h1>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 gap-6">
+      <h1 className="text-3xl font-bold">Динамик Тоолуур</h1>
+      <p className="text-2xl font-semibold">Тоолуур: {count}</p>
 
-      {/* Одоогийн count-ийн утгыг харуулах */}
-      <p className="text-xl">Current count: {count}</p>
-
-      {/* Товчнуудыг нэг мөрөнд байрлуулах flex контейнер */}
-      <div className="flex gap-2">
-        {/* Increase товч */}
+      <div className="flex gap-3 flex-wrap">
         <button
-          className="bg-blue-500 text-white px-4 py-2 rounded"
-          // onClick event → товч дарахад setCount(count + 1) ажиллана
-          onClick={() => setCount(count + 1)}
+          onClick={decrease}
+          className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
         >
-          Increase
+          Хасах
         </button>
-
-        {/* Decrease товч */}
         <button
-          className="bg-red-500 text-white px-4 py-2 rounded"
-          // count-ийг 1-ээр хасна
-          onClick={() => setCount(count - 1)}
+          onClick={reset}
+          className="px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600"
         >
-          Decrease
+          Тэглэх
         </button>
-
-        {/* Reset товч */}
         <button
-          className="bg-gray-500 text-white px-4 py-2 rounded"
-          // count-ийг анхны утга (0) болгож сэргээх
-          onClick={() => setCount(0)}
+          onClick={increase}
+          className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
         >
-          Reset
+          Нэмэх
+        </button>
+        <button
+          onClick={double}
+          className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+        >
+          ×2
+        </button>
+        <button
+          onClick={half}
+          className="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600"
+        >
+          ÷2
         </button>
       </div>
     </div>
