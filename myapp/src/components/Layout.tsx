@@ -23,6 +23,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <Link href="/gallery" className="hover:underline">
               Зургийн цомог
             </Link>
+             <Link href="/localstorage" className="hover:underline ">
+             stroge
+            </Link>
               <Link href="/counter" className="hover:underline">
               counter
             </Link>

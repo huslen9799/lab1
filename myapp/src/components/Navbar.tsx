@@ -13,6 +13,7 @@ export default function Navbar() {
       <Link href="/gallery/">Gallery</Link>
       <Link href="/counter/">Counter</Link>
       <Link href="/todo/">Todo</Link>
+      <Link href="/localstorage/">storage</Link>
     </nav>
   );
 }
