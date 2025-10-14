@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-
+import Layout from "@/components/Layout";
 export default function RegisterPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -30,6 +30,7 @@ export default function RegisterPage() {
   };
 
   return (
+    <Layout>
     <div className="flex flex-col items-center mt-10">
       <h1 className="text-2xl font-bold mb-4">Register</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-3 w-72">
@@ -67,5 +68,6 @@ export default function RegisterPage() {
         </button>
       </form>
     </div>
+    </Layout>
   );
 }

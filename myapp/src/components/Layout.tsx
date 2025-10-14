@@ -32,6 +32,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Link href="/todo" className="hover:underline ">
              todo
             </Link>
+             <Link href="/form/register" className="hover:underline ">
+             register
+            </Link>
+            <Link href="/form/login" className="hover:underline ">
+             login
+            </Link>
+          </nav>
+          <nav>
           </nav>
         </div>
       </header>
