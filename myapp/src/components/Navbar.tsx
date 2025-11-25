@@ -14,8 +14,8 @@ export default function Navbar() {
       <Link href="/counter/">Counter</Link>
       <Link href="/todo/">Todo</Link>
       <Link href="/localstorage/">storage</Link>
-      <Link href="/form/register/">Register</Link>
-      <Link href="/form/login/">Login</Link>
+      <Link href="/form/register1/">Register</Link>
+      <Link href="/form/login1/">Login</Link>
     </nav>
   );
 }
